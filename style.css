@@ -78,12 +78,12 @@ body, html {
     box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-/* --- 3. SCREEN 2: RESPONSIVE GRID (Gap Removed) --- */
+/* --- 3. SCREEN 2: RESPONSIVE GRID --- */
 #experience-content {
     width: 100%;
     opacity: 0;
     transition: opacity 0.8s ease-in;
-    padding-top: 30px; /* Reduced from 120px to remove top gap */
+    padding-top: 30px;
     padding-bottom: 100px;
 }
 
@@ -149,10 +149,10 @@ body, html {
     text-align: center;
 }
 
-/* --- FILTER ICON & MENU (Positioned at Top) --- */
+/* --- FILTER ICON & MENU --- */
 .filter-wrapper {
     position: absolute;
-    top: 0; /* Aligns icon with the top of the header */
+    top: 0; 
     right: 10px;
     z-index: 100;
 }
@@ -186,7 +186,7 @@ body, html {
     backdrop-filter: blur(15px);
     border: 1px solid #333;
     transition: 0.3s ease;
-    min-width: 120px;
+    min-width: 140px;
 }
 
 .filter-menu-hidden {
@@ -207,15 +207,144 @@ body, html {
     transition: 0.2s;
 }
 
-.filter-chip:hover {
+.filter-chip:hover, .filter-chip.active {
     background: rgba(255,255,255,0.1);
     color: white;
 }
 
-.filter-chip.active {
+/* --- SETTINGS MENU STYLES --- */
+.menu-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+.settings-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff !important;
+}
+
+.settings-option img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+}
+
+.settings-option:hover img {
+    opacity: 1;
+    transform: rotate(45deg);
+    transition: 0.3s ease;
+}
+
+/* --- SETTINGS MODAL (NEW WINDOW) --- */
+#settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease;
+}
+
+.modal-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: #1c1c1e;
+    width: 90%;
+    max-width: 400px;
+    padding: 35px;
+    border-radius: 28px;
+    border: 1px solid #333;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-hidden .modal-content {
+    transform: scale(0.9);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section h3 {
+    font-size: 0.85rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.modal-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.modal-hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 20px 0;
+}
+
+.contact-link {
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-row {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.social-row a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #333;
     color: white;
-    font-weight: 600;
-    background: rgba(255,255,255,0.05);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --- 4. SCREEN 3: PLAYER OVERLAY --- */
