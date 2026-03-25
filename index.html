@@ -27,13 +27,19 @@
                 <p class="subtitle">Select a track to begin the journey</p>
                 
                 <div class="filter-wrapper">
-                    <button id="filter-icon-btn" onclick="toggleFilterMenu()">
-                        </button>
+                    <button id="filter-icon-btn" onclick="toggleFilterMenu()"></button>
                     <div id="filter-menu" class="filter-menu-hidden">
                         <button class="filter-chip active" onclick="filterTracks('all', this)">All</button>
                         <button class="filter-chip" onclick="filterTracks('english', this)">English</button>
                         <button class="filter-chip" onclick="filterTracks('hindi', this)">Hindi</button>
                         <button class="filter-chip" onclick="filterTracks('phonks', this)">Phonks</button>
+                        
+                        <div class="menu-divider"></div>
+                        
+                        <button class="filter-chip settings-option" onclick="openSettings()">
+                            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/settings--v1.png" alt="Settings">
+                            Settings
+                        </button>
                     </div>
                 </div>
             </header>
@@ -47,7 +53,6 @@
         <div class="player-content">
             <img id="player-img" src="" alt="Album Art">
             <h2 id="player-song-name">Song Name</h2>
-            
             <canvas id="visualizer"></canvas>
 
             <div class="progress-container">
@@ -60,14 +65,61 @@
                 <button class="nav-btn" onclick="changeSong(-1)">
                     <img src="8838951.png" class="back-icon" alt="Back">
                 </button>
-                
                 <button id="play-pause-btn" class="main-play" onclick="togglePlay()">
                     <img src="play.png" id="play-pause-icon" alt="Play/Pause">
                 </button>
-                
                 <button class="nav-btn" onclick="changeSong(1)">
                     <img src="8838951.png" class="forward-icon" alt="Forward">
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="settings-modal" class="modal-hidden">
+        <div class="modal-overlay" onclick="closeSettings()"></div>
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeSettings()">✕</button>
+            <h2 class="modal-title">Settings</h2>
+            
+            <div class="modal-body">
+ <section class="modal-section">
+    <h3>About App</h3>
+    <p><strong>4D Sound Experience v1.0</strong></p>
+    <p>
+        4D Sound Experience is a music app I created to deliver an immersive 4D spatial audio experience. 
+        It makes music feel like it surrounds you from all directions. For the best experience, use high-quality headphones.
+    </p>
+
+    <h4>About Developer</h4>
+    <p>
+        I am Avirup Das, a passionate young developer who enjoys building creative and interactive applications using modern web technologies. 
+        I like experimenting with new ideas and creating unique digital experiences through my projects.
+    </p>
+</section>
+
+<hr class="modal-hr">
+
+<section class="modal-section">
+    <h3>Contact & Support</h3>
+    <p>Facing issues? Feel free to reach out:</p>
+    
+    <a href="mailto:avirupdas7278@gmail.com" class="contact-link">
+        avirupdas7278@gmail.com
+    </a>
+
+    <div class="social-row">
+        <span>Socials:</span>
+
+        <a href="https://www.instagram.com/godz_boy_11/" target="_blank" class="social-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+                 alt="Instagram" 
+                 style="width:16px; height:16px; vertical-align:middle; margin-right:5px;">
+            Instagram
+        </a>
+    </div>
+</section>
+
+
             </div>
         </div>
     </div>
