@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4D Sound Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-screen" class="full-screen-center">
+        <div class="wrapper">
+            <img src="airpods-pro-2nd-generation-png-7040816946218451no0esezhy-removebg-preview.png" 
+                 alt="AirPods" class="floating-airpods" id="airpods">
+            <div id="ui-elements">
+                <h1 class="hero-title">Experience Sound in 4D</h1>
+                <p class="instruction">Please wear headphones for the best experience</p>
+                <button class="start-btn" onclick="startExperience()">Get Started</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience-content" class="hidden">
+        <div class="grid-container">
+            <header class="grid-header">
+                <h2 class="section-title">Songs Library</h2>
+                <p class="subtitle">Select a track to begin the journey</p>
+                
+                <div class="filter-wrapper">
+                    <button id="filter-icon-btn" onclick="toggleFilterMenu()">
+                        </button>
+                    <div id="filter-menu" class="filter-menu-hidden">
+                        <button class="filter-chip active" onclick="filterTracks('all', this)">All</button>
+                        <button class="filter-chip" onclick="filterTracks('english', this)">English</button>
+                        <button class="filter-chip" onclick="filterTracks('hindi', this)">Hindi</button>
+                        <button class="filter-chip" onclick="filterTracks('phonks', this)">Phonks</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="song-grid" id="song-grid"></div>
+        </div>
+    </div>
+
+    <div id="player-overlay" class="player-hidden">
+        <button class="close-player" onclick="closePlayer()">✕</button>
+        <div class="player-content">
+            <img id="player-img" src="" alt="Album Art">
+            <h2 id="player-song-name">Song Name</h2>
+            
+            <canvas id="visualizer"></canvas>
+
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" step="0.1" max="100">
+                <span id="duration-time">0:00</span>
+            </div>
+
+            <div class="controls">
+                <button class="nav-btn" onclick="changeSong(-1)">
+                    <img src="8838951.png" class="back-icon" alt="Back">
+                </button>
+                
+                <button id="play-pause-btn" class="main-play" onclick="togglePlay()">
+                    <img src="play.png" id="play-pause-icon" alt="Play/Pause">
+                </button>
+                
+                <button class="nav-btn" onclick="changeSong(1)">
+                    <img src="8838951.png" class="forward-icon" alt="Forward">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="main-audio" crossorigin="anonymous"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
