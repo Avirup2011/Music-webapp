@@ -1,10 +1,5 @@
 const tracks = [
-    { 
-        name: "Believer", 
-        genre: "english",
-        img: "https://i.scdn.co/image/ab67616d0000b2735675e83f707f1d7271e5cf8a", 
-        url: "https://res.cloudinary.com/ddxsesq2l/video/upload/v1774419689/Imagine_Dragons_-_Believer_8D_AUDIO_n9ewll.mp3" 
-    },
+
     { 
         name: "I wanna be your slave",
         genre: "english",
